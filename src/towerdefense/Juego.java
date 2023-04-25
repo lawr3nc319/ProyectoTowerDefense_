@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author lawwb, racatal
+ * @author lawwb, racatal, Marita
  */
 public class Juego {
 
@@ -66,8 +66,74 @@ public class Juego {
 
                     seleccionJugador[i] = cantidad;
                 }
-
+                // Mostrar las tropas seleccionadas por el jugador
+                System.out.println("Tropas seleccionadas por el jugador:");
+                for (int i = 0; i < opcionesTropas.length; i++) {
+                    System.out.println(opcionesTropas[i] + ": " + seleccionJugador[i]);
+                }
+                // Realizar la selección de tropas por parte del CPU de manera aleatoria
+                // por ejemplo, mediante un menú en consola o una interfaz gráfica
+                // supongamos que el jugador seleccionó un mago
+                magos++;
+                tropasRestantes--;
             }
+            
+            // Selección de tropas por parte del CPU
+            tropasRestantes = oleada + 3; // el CPU tiene una tropa menos que el jugador
+            int cpuMagos = 0;
+            int cpuArqueros = 0;
+            int cpuCaballeros = 0;
+
+            while (tropasRestantes > 0 && cpuMagos + cpuArqueros + cpuCaballeros < 0.75 * tropasRestantes) {
+                // aquí el CPU podría elegir de manera aleatoria qué tropa enviar y por qué camino
+                // supongamos que el CPU seleccionó un arquero y lo enviará por el camino 2
+                cpuArqueros++;
+                tropasRestantes--;
+            }
+
+            // Inicio de la oleada
+            while (tropasJugador > 0 && tropasCPU > 0 && vidaJugador > 0 && vidaCPU > 0) {
+                if (turnoJugador) {
+                    // Turno del jugador
+                    // Colocación de tropa del jugador en el tablero
+                    // ...
+                    // Movimiento de tropas del jugador
+                    // ...
+                    // Comprobación de choques entre tropas y resolución de combate
+                    // ...
+                    // Comprobación de si se ha alcanzado el castillo del CPU y ataque al mismo
+                    // ...
+                    // Actualización del número de tropas disponibles para el jugador
+                    tropasJugador--;
+                    // Cambio de turno al CPU
+                    turnoJugador = false;
+                } else {
+
+                    // Turno del CPU
+                    // Colocación de tropa del CPU en el tablero
+                    // ...
+                    // Movimiento de tropas del CPU
+                    // ...
+                    // Comprobación de choques entre tropas y resolución de combate
+                    // ...
+                    // Comprobación de si se ha alcanzado el castillo del jugador y ataque al mismo
+                    // ...
+                    // Actualización del número de tropas disponibles para el CPU
+                    tropasCPU--;
+                    // Cambio de turno al jugador
+                    turnoJugador = true;
+                }
+                // Incremento del tiempo transcurrido
+                tiempo++;
+            }
+            // Incremento del número de oleada
+            oleada++;
+        }
+        // Fin del juego
+        if (vidaJugador <= 0) {
+            System.out.println("¡El CPU ha ganado!");
+        } else if (vidaCPU <= 0) {
+            System.out.println("¡El jugador ha ganado!");
         }
     }
 }
