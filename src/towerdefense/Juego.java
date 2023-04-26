@@ -20,12 +20,17 @@ public class Juego {
         Tropa tropa1 = new Tropa ("Mago", 1.5, "Arquero");
         Tropa tropa2 = new Tropa ("Arquero", 1, "Caballero");
         Tropa tropa3 = new Tropa ("Caballero", 2, "Mago");
+        int colaTropaCPU = 0;
+        Cola colaCPU = new Cola();
         
         // Bucle principal del juego
-        while (colaTropaCPU >= tropaCPU) {
-            int min = 1;
-            int max = 3;
-            int range = max - min + 1;
+        while (colaTropaCPU >= 3) {
+            int seleccionCPU = (int) (Math.random()*3+1);
+            
+            switch(seleccionCPU){
+                case 1:
+                    colaCPU.enCola(tropa1.getTipo());
+            }
             
         }           
 // Bucle principal del juego
