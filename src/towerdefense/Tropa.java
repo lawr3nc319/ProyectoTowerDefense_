@@ -12,16 +12,18 @@ public class Tropa {
     private String tipo;
     private double ataque;
     private String debilidad;
+    private boolean siguiente;
 
-    public Tropa(String tipo, double ataque, String debilidad) {
+    public Tropa(String tipo, double ataque, String debilidad, boolean siguiente) {
         this.tipo = tipo;
         this.ataque = ataque;
         this.debilidad = debilidad;
+        this.siguiente = siguiente;
     }
 
     public String getTipo() {
         return tipo;
-    }
+    }    
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
@@ -42,4 +44,14 @@ public class Tropa {
     public void setDebilidad(String debilidad) {
         this.debilidad = debilidad;
     }
+
+    public boolean isSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(boolean siguiente) {
+        this.siguiente = siguiente;
+    }
+    
+    
 }
