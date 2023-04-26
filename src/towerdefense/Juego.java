@@ -17,7 +17,10 @@ public class Juego {
         int tropasCPU = 0; // Cantidad de tropas que el CPU puede colocar en el tablero
         boolean turnoJugador = true; // Indica si es el turno del jugador o del CPU
         int tiempo = 0; // Tiempo transcurrido en segundos
-
+        Arquero arquero = new Arquero();
+        Caballero caballero = new Caballero();
+        Mago mago = new Mago();
+        
         // Bucle principal del juego
         while (vidaJugador > 0 && vidaCPU > 0) {
             // Preparación de la oleada actual
@@ -31,6 +34,8 @@ public class Juego {
             int magos = 0;
             int arqueros = 0;
             int caballeros = 0;
+            
+            
 
             while (tropasRestantes > 0) {
                 // aquí se podría mostrar al jugador las opciones de tropas y dejarlo seleccionar

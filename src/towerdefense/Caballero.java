@@ -8,24 +8,10 @@ package towerdefense;
  *
  * @author lawwb
  */
-public class Tropa {
-    private String tipo;
-    private double ataque;
-    private String debilidad;
-
-    public Tropa(String tipo, double ataque, String debilidad) {
-        this.tipo = tipo;
-        this.ataque = ataque;
-        this.debilidad = debilidad;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+public class Caballero {
+    private double ataque = 2;
+    private String debilidad = "Mago";
+    private String fuerte = "Arquero";
 
     public double getAtaque() {
         return ataque;
@@ -42,4 +28,14 @@ public class Tropa {
     public void setDebilidad(String debilidad) {
         this.debilidad = debilidad;
     }
+
+    public String getFuerte() {
+        return fuerte;
+    }
+
+    public void setFuerte(String fuerte) {
+        this.fuerte = fuerte;
+    }
+    
+    
 }
