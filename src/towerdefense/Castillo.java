@@ -6,13 +6,13 @@ package towerdefense;
  */
 public class Castillo {
 
-    private int vida;
+    private double vida;
 
     public Castillo() {
         vida = 10;
     }
 
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
 
