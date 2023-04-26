@@ -6,20 +6,13 @@ package towerdefense;
  * @author racatal
  */
 public class Nodo {
-    private Tropa tipo;
+    private Tropa dato;
     private Nodo atras;
 
-    public Nodo(Tropa tipo) {
-        this.tipo = tipo;
-    }
-
-    public Tropa getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tropa tipo) {
-        this.tipo = tipo;
-    }
+    public Nodo(Tropa dato) {
+        this.dato = dato;
+        this.atras = null;
+    }           
 
     public Nodo getAtras() {
         return atras;
@@ -29,4 +22,11 @@ public class Nodo {
         this.atras = atras;
     }
 
+    public Tropa getDato() {
+        return dato;
+    }
+
+    public void setDato(Tropa dato) {
+        this.dato = dato;
+    }        
 }

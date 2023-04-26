@@ -1,11 +1,11 @@
 package towerdefense;
+import java.lang.String;
 
 /**
  *
  * @author racatal
  */
 public class Cola {
-
     private Nodo frente;
     private Nodo ultimo;
     private int largo;

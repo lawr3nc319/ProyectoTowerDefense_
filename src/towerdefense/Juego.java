@@ -25,14 +25,22 @@ public class Juego {
         
         // Bucle principal del juego
         while (colaTropaCPU >= 3) {
-            int seleccionCPU = (int) (Math.random()*3+1);
-            
+            int seleccionCPU = (int) (Math.random()*3+1);            
             switch(seleccionCPU){
                 case 1:
                     colaCPU.enCola(tropa1.getTipo());
-            }
-            
-        }           
+                colaTropaCPU++;
+                break;
+            case 2:
+                colaCPU.enCola(tropa2.getTipo());
+                colaTropaCPU++;
+                break;
+            case 3:
+                colaCPU.enCola(tropa3.getTipo());
+                colaTropaCPU++;
+                break;
+        }
+        }
 // Bucle principal del juego
         while (vidaJugador > 0 && vidaCPU > 0) {
             // Preparación de la oleada actual
@@ -45,9 +53,7 @@ public class Juego {
             int tropasRestantes = oleada + 4; // número de tropas que puede seleccionar el jugador                        
             int magos = 0;
             int arqueros = 0;
-            int caballeros = 0;
-            
-            
+            int caballeros = 0;                        
 
             while (tropasRestantes > 0) {
                 // aquí se podría mostrar al jugador las opciones de tropas y dejarlo seleccionar
@@ -86,10 +92,11 @@ public class Juego {
                 // Mostrar las tropas seleccionadas por el jugador
                 System.out.println("Tropas seleccionadas por el jugador:");
                 for (int i = 0; i < opcionesTropas.length; i++) {
-                    System.out.println(opcionesTropas[i] + ": " + seleccionJugador[i]);
+                    System.out.println(opcionesTropas[i] + ": " + 
+                            seleccionJugador[i]);
                 }
                 // Realizar la selección de tropas por parte del CPU de manera aleatoria
-                // por ejemplo, mediante un menú en consola o una interfaz gráfica
+                // por ejemplo, mediante un menú en consola
                 // supongamos que el jugador seleccionó un mago
                 magos++;
                 tropasRestantes--;
@@ -101,7 +108,8 @@ public class Juego {
             int cpuArqueros = 0;
             int cpuCaballeros = 0;
 
-            while (tropasRestantes > 0 && cpuMagos + cpuArqueros + cpuCaballeros < 0.75 * tropasRestantes) {
+            while (tropasRestantes > 0 && cpuMagos + cpuArqueros + cpuCaballeros 
+                    < 0.75 * tropasRestantes) {
                 // aquí el CPU podría elegir de manera aleatoria qué tropa enviar y por qué camino
                 // supongamos que el CPU seleccionó un arquero y lo enviará por el camino 2
                 cpuArqueros++;
@@ -112,7 +120,7 @@ public class Juego {
             while (tropasJugador > 0 && tropasCPU > 0 && vidaJugador > 0 && vidaCPU > 0) {
                 if (turnoJugador) {
                     // Turno del jugador
-                    // Colocación de tropa del jugador en el tablero
+                    // Colocación de tropa del jugador en el tablero                    
                     // ...
                     // Movimiento de tropas del jugador
                     // ...
