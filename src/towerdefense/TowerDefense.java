@@ -13,8 +13,11 @@ public class TowerDefense {
     //main del juego
     public static void main(String[] args)throws InterruptedException {
         Juego juego = new Juego();
+        Cronometro cronometro = new Cronometro();
           
+        cronometro.cronometro();
         juego.jugar() ;
+        
     }
     
 }
