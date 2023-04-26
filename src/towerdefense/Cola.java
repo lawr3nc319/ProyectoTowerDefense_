@@ -16,9 +16,10 @@ public class Cola {
         this.largo = 0;
     }
 
+    //agregar al final de la cola
     public void enCola(Tropa dato) {
         Nodo nuevoNodo = new Nodo(dato, null);
-        if (frente == null) {  // significa que la cola esta vacia
+        if (frente == null) {  //cola esta vacia
             frente = nuevoNodo;
             ultimo = nuevoNodo;
         } else if (nuevoNodo.getDato().isSiguiente()) {
