@@ -17,6 +17,9 @@ public class Juego {
         int tropasCPU = 0; // Cantidad de tropas que el CPU puede colocar en el tablero
         boolean turnoJugador = true; // Indica si es el turno del jugador o del CPU
         int tiempo = 0; // Tiempo transcurrido en segundos
+        Tropa tropa1 = new Tropa ("Mago", 1.5, "Arquero");
+        Tropa tropa2 = new Tropa ("Arquero", 1, "Caballero");
+        Tropa tropa3 = new Tropa ("Caballero", 2, "Mago");
         
         // Bucle principal del juego
         while (vidaJugador > 0 && vidaCPU > 0) {
