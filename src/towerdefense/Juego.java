@@ -162,14 +162,5 @@ public class Juego {
             System.out.println("¡El jugador ha ganado!");
         }
 
-        //Cronometro
-        // Fin del juego
-        if (vidaJugador <= 0) {
-            System.out.println("¡El CPU ha ganado!");
-        } else if (vidaCPU <= 0) {
-            System.out.println("¡El jugador ha ganado!");
-        }
-
-        //Cronometro
     }
 }
