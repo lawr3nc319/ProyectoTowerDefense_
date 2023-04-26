@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Juego {
 
-    public void jugar() {
+    public void jugar() throws InterruptedException {
         // Inicialización de variables
         int vidaJugador = 10; // Vida inicial del jugador
         int vidaCPU = 10; // Vida inicial del CPU
@@ -50,17 +50,17 @@ public class Juego {
                 Scanner scanner = new Scanner(System.in);
 
                 for (int i = 0; i < opcionesTropas.length; i++) {
-                    System.out.print("¿Cuántas tropas de " 
+                    System.out.print("¿Cuántas tropas de "
                             + opcionesTropas[i] + " desea enviar? ");
                     int cantidad = scanner.nextInt();
 
                     // Verificar que la cantidad seleccionada no exceda el máximo 
                     //permitido por oleada
                     while (cantidad > maxTropas) {
-                        System.out.println("No puede enviar más de " 
+                        System.out.println("No puede enviar más de "
                                 + maxTropas + " tropas en esta oleada.");
-                        System.out.print("¿Cuántas tropas de " + 
-                                opcionesTropas[i] + " desea enviar? ");
+                        System.out.print("¿Cuántas tropas de "
+                                + opcionesTropas[i] + " desea enviar? ");
                         cantidad = scanner.nextInt();
                     }
 
@@ -77,7 +77,7 @@ public class Juego {
                 magos++;
                 tropasRestantes--;
             }
-            
+
             // Selección de tropas por parte del CPU
             tropasRestantes = oleada + 3; // el CPU tiene una tropa menos que el jugador
             int cpuMagos = 0;
@@ -129,11 +129,25 @@ public class Juego {
             // Incremento del número de oleada
             oleada++;
         }
+
         // Fin del juego
         if (vidaJugador <= 0) {
             System.out.println("¡El CPU ha ganado!");
         } else if (vidaCPU <= 0) {
             System.out.println("¡El jugador ha ganado!");
+        }
+
+        //Cronometro
+        long inicio = System.currentTimeMillis(); // obtener la hora actual del sistema
+        while (true) {
+            long actual = System.currentTimeMillis();
+            long tiempoTranscurrido = actual - inicio; // calcular el tiempo transcurrido
+            long segundos = (tiempoTranscurrido / 1000) % 60; // calcular los segundos transcurridos
+            long minutos = (tiempoTranscurrido / (1000 * 60)) % 60; // calcular los minutos transcurridos
+            long horas = (tiempoTranscurrido / (1000 * 60 * 60)) % 24; // calcular las horas transcurridas
+            System.out.print("\r" + String.format("Tiempo transcurrido: "
+                    + "%02d:%02d:%02d", horas, minutos, segundos)); // imprimir el tiempo en consola
+            Thread.sleep(1000); // esperar un segundo antes de continuar
         }
     }
 }
